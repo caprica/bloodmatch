@@ -1,7 +1,7 @@
 Blood Match
 ===========
 
-This is a fully functional reference application build using Meteor and related technologies.
+This is a fully functional reference application built using Meteor, SemanticUI and related technologies.
 
 What Is It?
 -----------
@@ -13,7 +13,7 @@ Status
 
 This application is fully working, and can actually be useful.
 
-However, it is really only a proof-of-concept and is intended to be a reference/demo application demonstrating competencies with Meteor and related technologies.
+However, it is really only a proof-of-concept and is intended to be a reference application demonstrating competencies with Meteor and related technologies.
 
 License
 -------
