@@ -26,4 +26,4 @@ Live Deployment
 ---------------
 
 There is a live deployment of this application on RedHat's OpenShift platform at [Bloodmatch](http://bloodmatch-caprica.rhcloud.com/ "Bloodmatch")]
-=======
+
