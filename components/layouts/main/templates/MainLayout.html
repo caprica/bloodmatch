@@ -1,0 +1,80 @@
+<template name="MainLayout">
+    <div class="page-wrap">
+        <nav class="ui inverted pointing menu nav">
+            {{#unless currentUser}}
+            <a class="{{ isActiveRoute 'Intro' }} item" href="{{pathFor 'Intro'}}">{{ config 'application' }}</a>
+            {{/unless}}
+            {{#if currentUser}}
+            <a class="{{isActiveRoute 'Home'}} item" href="{{pathFor 'Home'}}"><i class="home icon"></i> Home</a>
+            <a class="{{isActiveRoute 'Hunters'}} item" href="{{pathFor 'Hunters'}}"><i class="users icon"></i> Hunters</a>
+            <a class="{{isActiveRoute 'BeckoningBell'}} item" href="{{pathFor 'BeckoningBell'}}"><i class="alarm outline icon"></i> Beckoning Bell</a>
+            <a class="{{isActiveRoute 'ResonantBell'}} item" href="{{pathFor 'ResonantBell'}}"><i class="alarm icon"></i> Resonant Bell</a>
+            <a class="{{isActivePath regex='^/locations'}} item" href="{{pathFor 'Locations'}}"><i class="marker icon"></i> Locations</a>
+            {{/if}}
+            <div class="right menu">
+                <!--
+                <a class="{{ isActiveRoute 'About' }} item" href="{{ pathFor 'About' }}"><i class="help circle icon"></i> About</a>
+                -->
+                {{#if currentUser}}
+                {{> CurrentUserMenu}}
+                {{else}}
+                    {{#if config 'allowSignin' true}}
+                    <a class="{{isActiveRoute regex='SignIn|Register'}} item" href="{{pathFor 'SignIn'}}"><i class="sign in icon"></i> Sign In{{#if config 'allowSignup' true}} or Register{{/if}}</a>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </nav>
+        <main>
+            {{> yield}}
+        </main>
+    </div>
+    <footer class="ui inverted black footer vertical segment page-footer">
+        <div class="ui page grid">
+            <div class="computer only row">
+                <div class="column">
+                    <div class="ui stackable inverted divided relaxed grid">
+                        <div class="twelve wide column">
+                            <h3 class="ui red header">Let Us Cleanse These Foul Streets</h3>
+                            <p>
+                                Real-time matchmaking for Bloodborne.
+                            </p>
+                            <p>
+                                This service is currently in an alpha state, no guarantees are made and things might change... a lot.
+                            </p>
+                            <p>
+                                &copy; {{year}} <a href="http://capricasoftware.co.uk">Caprica Software Limited</a>
+                            </p>
+                        </div>
+                        <div class="four wide column">
+                            <h5 class="ui red header">About</h5>
+                            <div class="ui inverted link list">
+                                <a class="disabled item">Feedback</a>
+                                <a class="disabled item">Terms and Conditions</a>
+                                <a class="disabled item">Privacy Policy</a>
+                                <a class="disabled item">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile only row">
+                <div class="column">
+                    <div class="ui stackable inverted divided relaxed grid">
+                        <div class="column">
+                            <h3 class="ui red header">Let Us Cleanse These Foul Streets</h3>
+                            <p>
+                                Real-time matchmaking for Bloodborne.
+                            </p>
+                            <p>
+                                This service is currently in an alpha state, no guarantees are made and things might change... a lot.
+                            </p>
+                            <p>
+                                &copy; {{year}} <a href="http://capricasoftware.co.uk">Caprica Software Limited</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</template>

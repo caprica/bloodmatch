@@ -1,0 +1,22 @@
+<template name="HunterCard">
+    <div class="ui {{covenantColour}} card">
+        <span class="ui right {{covenantColour}} corner label">
+            <i class="user icon"></i>
+        </span>
+        <div class="content">
+            <div class="header">
+                {{name}}
+            </div>
+            <div class="meta">
+                Level {{level}}
+            </div>
+            {{#if covenant}}
+                <div class="meta">
+                    {{covenant}}
+                </div>
+            {{/if}}
+            <div class="description">
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,118 @@
+<template name="Home">
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <h3 class="ui top attached header">
+                    Welcome, {{currentUser.username}}!
+                    <h4 class="sub header">
+                        {{journal}}
+                    </h4>
+                </h3>
+                {{#unless anyHunters}}
+                <div class="ui attached inverted raised segment">
+                    <h4 class="ui header">Getting Started</h4>
+                    <p>
+                        To begin matchmaking you need to add some basic details about your Hunter.
+                    </p>
+                    <p>
+                        After you add a Hunter, you can go to any Location you want and ring your Beckoning Bell to request
+                        assistance, or if you want to provide assistance you can ring your Resonant Bell to find Hunters.
+                    </p>
+                    <hr>
+                    <p>
+                        <i>You must remain signed in for matchmaking to work - you can sign in on any number of devices, desktop,
+                        tablet or mobile, and as long as you remain signed in on at least one device then your Hunter will be
+                        able to participate in matchmaking.</i>
+                    </p>
+                </div>
+                <div class="ui right aligned bottom attached segment">
+                    <a href="{{pathFor 'AddHunter'}}" class="ui blue button"><i class="add user icon"></i> Add Hunter</a>
+                </div>
+                {{/unless}}
+                {{#if anyHunters}}
+                <div class="ui attached raised segment">
+                    <div class="ui vertical segment">
+                        <div class="ui two column grid">
+                            <div class="row">
+                                <div class="column">
+                                    <h4 class="ui header">Hunter</h4>
+                                    <p>
+                                        This is your currently active Hunter, used for matchmaking.
+                                    </p>
+                                    <p>
+                                        Manage your <a class="inline ui tiny black button" href="{{pathFor 'Hunters'}}"><i class="users icon"></i> Hunters</a>
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    {{>MyHunterCard myHunter}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui vertical segment">
+                        <div class="ui two column grid">
+                            <div class="row">
+                                <div class="column">
+                                    <h4 class="ui header">Beckoning Bell</h4>
+                                    {{#if myBeckoningBell}}
+                                    <p>
+                                        Your <a class="inline ui tiny black button" href="{{pathFor 'BeckoningBell'}}"><i class="alarm outline icon"></i> Beckoning Bell</a> is ringing.
+                                    </p>
+                                    <p>
+                                        Your Beckoning Bell will be silenced if you sign out, if you activate a different Hunter,
+                                        or if it has been ringing for 30 minutes.
+                                    </p>
+                                    {{else}}
+                                    <p>
+                                        Use your <a class="inline ui tiny black button" href="{{pathFor 'BeckoningBell'}}"><i class="alarm outline icon"></i> Beckoning Bell</a> to call for aid.
+                                    </p>
+                                    {{/if}}
+                                </div>
+                                <div class="column">
+                                    {{#if myBeckoningBell}}
+                                        {{>MyBellCard myBeckoningBell}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui vertical segment">
+                        <div class="ui two column grid">
+                            <div class="row">
+                                <div class="column">
+                                    <h4 class="ui header">Resonant Bell</h4>
+                                    <p>
+                                        Use your <a class="inline ui tiny black button" href="{{pathFor 'ResonantBell'}}"><i class="alarm icon"></i> Resonant Bell</a> to find Hunters to aid.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        {{#if isInRole 'admin'}}
+        <div class="row">
+            <div class="column">
+                <h3 class="ui top attached header">
+                    Admin
+                </h3>
+                <div class="ui attached raised segment">
+                    <div class="ui vertical segment">
+                        <p>
+                            Administrator functions.
+                        </p>
+                        <ul class="uk-list uk-list-space">
+                            <li><a href="{{pathFor 'AuditEvents'}}">Audit Events</a></li>
+                            <li><a href="{{pathFor 'AdminAccounts'}}">Accounts</a></li>
+                            <li><a href="{{pathFor 'AdminHunters'}}">Hunters</a></li>
+                            <li><a href="{{pathFor 'Reports'}}">Reports</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</template>

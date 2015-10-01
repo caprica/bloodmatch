@@ -1,0 +1,19 @@
+<template name="ChalicesMenu">
+    {{#unless small}}
+    <div class="ui fluid four item pointing menu">
+        {{#each chalices}}
+        <a class="{{isActivePath regex=pathExpression}} item" href="{{pathFor 'Chalice' chalice=this}}">
+            <i class="trophy icon"></i> {{this}}
+        </a>
+        {{/each}}
+    </div>
+    {{else}}
+    <div class="ui fluid vertical menu">
+        {{#each chalices}}
+        <a class="{{isActivePath regex=pathExpression}} item" href="{{pathFor 'Chalice' chalice=this}}">
+            <i class="trophy icon"></i> {{this}}
+        </a>
+        {{/each}}
+    </div>
+    {{/unless}}
+</template>

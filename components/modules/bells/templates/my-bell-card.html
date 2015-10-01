@@ -1,0 +1,59 @@
+<template name="MyBellCard">
+    <div class="ui card">
+        <span class="ui right black corner label">
+            <i class="alarm outline icon"></i>
+        </span>
+        <div class="content">
+            <div class="header">
+                {{#if equals type 'Headstone'}}
+                    {{location}}
+                {{/if}}
+                {{#if equals type 'Hunter\'s Dream'}}
+                    {{location}}
+                {{/if}}
+                {{#if equals type 'Chalice'}}
+                    {{location}} <div class="sub header">Chalice Dungeon</div>
+                {{/if}}
+            </div>
+            <div class="meta">
+                {{#if equals type 'Headstone'}}
+                    {{headstone}} Headstone
+                {{/if}}
+                {{#if equals type 'Hunter\'s Dream'}}
+                    The {{type}}
+                {{/if}}
+                {{#if equals type 'Chalice'}}
+                    Layer {{layer}}
+                {{/if}}
+            </div>
+            <div class="description">
+            </div>
+        </div>
+        {{#if currentUser.profile.networkPassword}}
+        <div class="extra content">
+            <p>
+                Password <b>{{currentUser.profile.networkPassword}}</b>
+            </p>
+        </div>
+        {{/if}}
+        {{#if glyph}}
+        <div class="extra content">
+            <p>
+                <b>{{glyph.name}}</b>
+            </p>
+            <p>
+                <span class="ui medium black tag label glyph">{{glyph.glyph}}</span>
+            </p>
+        </div>
+        {{/if}}
+        <div class="extra content">
+            {{pingCount}}
+        </div>
+        <div class="extra content">
+            {{ago createdDate}}
+        </div>
+        <div id="silence" class="negative ui tiny bottom attached button">
+            <i class="alarm slash icon"></i> Silence
+        </div>
+    </div>
+</template>

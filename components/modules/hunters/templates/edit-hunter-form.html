@@ -1,0 +1,38 @@
+<template name="EditHunterForm">
+    <div class="required field">
+        <label for="level">Level</label>
+        <input id="level" name="level" type="number" required min="4" max="544" class="form-control" value="{{hunter.level}}">
+    </div>
+    <div class="field">
+        <label for="covenant">Covenant</label>
+        <select id="covenant" name="covenant" class="ui dropdown">
+            <option {{selected hunter.covenant ''}} value="">Neutral</option>
+            {{#each covenants}}
+                <option {{selected ../hunter.covenant name}} value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <h4 class="ui dividing header">Matchmaking Options</h4>
+    <div class="field">
+        <div class="ui toggle checkbox">
+            <input id="coop" name="coop" type="checkbox" checked="{{hunter.coop}}">
+            <label for="coop">Co-op (Story)</label>
+        </div>
+    </div>
+    <div class="field">
+        <div class="ui toggle checkbox">
+            <input id="chalices" name="chalices" type="checkbox" checked="{{hunter.chalices}}">
+            <label for="chalices">Co-op (Chalice Dungeons)</label>
+        </div>
+    </div>
+    <div class="field">
+        <div class="ui toggle checkbox">
+            <input id="pvp" name="pvp" type="checkbox" checked="{{hunter.pvp}}">
+            <label for="pvp">Player vs Player</label>
+        </div>
+    </div>
+    <div class="ui hidden divider"></div>
+    <div class="ui error message">
+    </div>
+    <button class="ui blue submit button">Save</button>
+</template>

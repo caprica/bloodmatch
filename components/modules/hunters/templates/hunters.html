@@ -1,0 +1,64 @@
+<template name="Hunters">
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <h3 class="ui top attached header">Hunters</h3>
+                <div class="ui attached raised segment">
+                    <div class="ui vertical segment">
+                        <div class="ui two column grid">
+                            <div class="row">
+                                <div class="column">
+                                    <h4 class="ui header">Hunter</h4>
+                                    {{#if activeHunter}}
+                                    <p>
+                                        This is your currently active Hunter, used for matchmaking.
+                                    </p>
+                                    {{else}}
+                                    <p>
+                                        You need an active Hunter before you can use matchmaking.
+                                    </p>
+                                    {{/if}}
+                                </div>
+                                <div class="column">
+                                    {{#if activeHunter}}
+                                        {{> MyHunterCard activeHunter}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{#if anyHunters}}
+                    <div class="ui vertical segment">
+                        <div class="ui two column grid">
+                            <div class="row">
+                                <div class="column">
+                                    <h4 class="ui header">Other Hunters</h4>
+                                    {{#if otherHunters.count}}
+                                    <p>
+                                        These are your other other Hunters, you can activate one of these Hunters to use in
+                                        matchmaking.
+                                    </p>
+                                    {{else}}
+                                    <p>
+                                        You currently have no other Hunters, you can add more Hunters but only the active Hunter
+                                        is used in matchmaking.
+                                    </p>
+                                    {{/if}}
+                                </div>
+                                <div class="column">
+                                    {{#each otherHunters}}
+                                        {{> MyHunterCard}}
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="ui bottom attached segment">
+                    <a class="ui blue button" href="{{pathFor 'AddHunter'}}"><i class="add user icon"></i> Add Hunter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

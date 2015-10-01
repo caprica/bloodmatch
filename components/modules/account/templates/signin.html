@@ -1,0 +1,54 @@
+<template name="SignIn">
+    <div class="ui stackable page grid">
+        <div class="eight wide centered column">
+            {{#if config 'allowSignin'}}
+                {{#if loginError}}
+                <div class="ui warning message">
+                    <div class="header">
+                        Login Failed
+                    </div>
+                    {{loginError}}
+                </div>
+                {{/if}}
+                <h3 class="ui top attached header">
+                    Sign In
+                </h3>
+                <div class="ui attached inverted segment">
+                    <div class="ui vertical segment">
+                        <form id="signInForm" class="ui inverted form">
+                            <div class="required field">
+                                <label for="username">Username</label>
+                                <div class="ui icon input">
+                                    <input id="username" name="username" class="uk-width-1-1 uk-form-large" type="text" placeholder="Enter Username">
+                                    <i class="user icon"></i>
+                                </div>
+                            </div>
+                            <div class="required field">
+                                <label for="password">Password</label>
+                                <div class="ui icon input">
+                                    <input id="password" name="password" class="uk-width-1-1 uk-form-large" type="password" placeholder="Enter Password">
+                                    <i class="lock icon"></i>
+                                </div>
+                            </div>
+                            <div class="ui error message">
+                            </div>
+                            <button class="ui blue submit button">Sign In</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="ui bottom attached right aligned segment">
+                     <a href="{{ pathFor 'Register' }}">Don't have an account yet, go here to register!</a>
+                 </div>
+            {{else}}
+                <div class="uk-width-small-2-3 uk-width-medium-3-5 uk-container-center">
+                    <div class="uk-alert uk-alert-danger uk-alert-large">
+                        <h2>Sign-In Disabled</h2>
+                        <p>
+                            Sign-ins are temporarily disabled because the service is undergoing maintenance, please try again later.
+                        </p>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

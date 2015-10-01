@@ -1,0 +1,42 @@
+<template name="Headstones">
+    <div class="ui page grid">
+        <div class="computer only row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> LocationsMenu small=true}}
+            </div>
+        </div>
+        <div class="computer only row">
+            <div class="column">
+                {{> HeadstonesMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> HeadstonesMenu headstones=headstones small=true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui icon message">
+                    <i class="flag icon"></i>
+                    <div class="content">
+                        <div class="header">
+                            Headstones
+                        </div>
+                        <p>
+                            Select a Headstone to continue...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+            {{>BeckonNoActiveHunter}}
+        {{/unless}}
+    </div>
+</template>

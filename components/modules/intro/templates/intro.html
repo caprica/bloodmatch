@@ -1,0 +1,71 @@
+<template name="Intro">
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <div class="ui huge message center aligned grid">
+                    <h1 class="ui huge header">{{ config 'application' }}
+                        <div class="sub header">A hunter is never alone, therefore time for wondrous cooperator.</div>
+                    </h1>
+                    <div class="ui hidden divider"></div>
+                    <p>
+                        Welcome to {{config 'application'}}, a <i>real-time</i> match-making service for the rather
+                        excellent Bloodborne PS4 game developed by From Software and published by Sony Computer
+                        Entertainment.
+                    </p>
+                    <div class="ui hidden divider"></div>
+                    {{#if currentUser}}
+                    <p>
+                        You are signed in as <strong>{{currentUser.username}}</strong>.
+                    </p>
+                    <div class="ui hidden divider"></div>
+                    {{/if}}
+                    {{#if currentUser}}
+                    <div class="row">
+                        <div class="colum">
+                            <a class="ui big blue button" href="{{ pathFor 'Home' }}">Get Started</a>
+                        </div>
+                    </div>
+                    {{else}}
+                    <div class="row">
+                        <div class="column">
+                            <div class="ui two column center aligned grid">
+                                <div class="row">
+                                    <div class="right aligned column">
+                                        <a class="ui big blue button" href="{{ pathFor 'SignIn' }}">Sign In</a>
+                                    </div>
+                                    <div class="ui vertical divider">or</div>
+                                    <div class="left aligned column">
+                                        <a class="ui big black button" href="{{ pathFor 'Register' }}">Register</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="row">
+            <div class="column">
+                <div class="ui message grid center aligned">
+                    <p>
+                       This is an independent service and is <u>not</u> supported or endorsed by, or affiliated with,
+                       either From Software or Sony Computer Entertainment.
+                    </p>
+                    <p>
+                        This service is currently alpha, no guarantees are made, things will change, and some things might not
+                        quite work...
+                    </p>
+                    <p>
+                        The application itself is intended as a vehicle or reference application to learn MeteorJS and demonstrate
+                        competencies in Meteor and related technologies.
+                    </p>
+                    <p>
+                        This should work on any <em>modern</em> web browser, but Chrome is recommended.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

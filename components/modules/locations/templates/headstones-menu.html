@@ -1,0 +1,19 @@
+<template name="HeadstonesMenu">
+    {{#unless small}}
+    <div class="ui fluid four item pointing menu">
+        {{#each headstones}}
+        <a class="{{isActivePath regex=pathExpression}} item" href="{{pathFor 'Headstone' headstone=this}}">
+            <i class="flag icon"></i> {{this}}
+        </a>
+        {{/each}}
+    </div>
+    {{else}}
+    <div class="ui fluid vertical menu">
+        {{#each headstones}}
+        <a class="{{isActivePath regex=pathExpression}} item" href="{{pathFor 'Headstone' headstone=this}}">
+            <i class="flag icon"></i> {{this}}
+        </a>
+        {{/each}}
+    </div>
+    {{/unless}}
+</template>

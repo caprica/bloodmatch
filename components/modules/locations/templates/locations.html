@@ -1,0 +1,32 @@
+<template name="Locations">
+    <div class="ui page grid">
+        <div class="computer only row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> LocationsMenu small=true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui icon message">
+                    <i class="info circle icon"></i>
+                    <div class="content">
+                        <div class="header">
+                            Select Location
+                        </div>
+                        <p>
+                            Select the type of location to begin...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+            {{>BeckonNoActiveHunter}}
+        {{/unless}}
+    </div>
+</template>

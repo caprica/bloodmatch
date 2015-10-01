@@ -1,0 +1,34 @@
+<template name="MyHunterCard">
+    <div class="ui {{#if active}}{{covenantColour}}{{/if}} card">
+        <span class="ui right {{covenantColour}} corner label">
+            <i class="user icon"></i>
+        </span>
+        <div class="content">
+            <a class="header" href="{{pathFor 'EditHunter' hunter=slug}}">
+                {{name}}
+            </a>
+            <div class="meta">
+                Level {{level}}
+            </div>
+            {{#if covenant}}
+            <div class="meta">
+                {{covenant}}
+            </div>
+            {{/if}}
+            <div class="description">
+            </div>
+        </div>
+        <div class="extra content">
+            <div class="ui tiny labels">
+                {{#if coop}}<span class="ui green tag label">COOP</span>{{/if}}
+                {{#if chalices}}<span class="ui yellow tag label">CHALICES</span>{{/if}}
+                {{#if pvp}}<span class="ui red tag label">PVP</span>{{/if}}
+            </div>
+        </div>
+        {{#unless active}}
+        <button class="positive ui bottom attached button activate">
+            <i class="thumbs up icon"></i> Activate
+        </button>
+        {{/unless}}
+    </div>
+</template>

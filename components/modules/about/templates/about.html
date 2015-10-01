@@ -1,0 +1,96 @@
+<template name="About">
+    <div class="ui page grid">
+        <div class="column">
+            <h1>About</h1>
+            <p>
+                This is a demo/reference application of a real-time reactive fully functional MeteorJS web application.
+            </p>
+            <h2>Let Us Cleanse These Foul Streets</h2>
+            <p>
+                {{config 'application'}} is a real-time 'live' match-making service for the rather excellent Bloodborne game made by From
+                Software.
+            </p>
+            <p>
+                Asynchronous match-making typically involves posting a plea for help in a community forum, and hoping someone is
+                around at roughly the same time to see your post and arrange a match-up. This has obvious disadvantages.
+            </p>
+            <p>
+                The real-time matchmaking provided by this service works with people who are on-line and either looking for help
+                or looking to help <em>right now</em>. The service automatically filters matchmaking partners to show only
+                <em>compatible</em> matches (for example based on Blood Level, and preferences for Co-Op, Chalice Dungeons or
+                PvP).
+            </p>
+            <h3>How It Works</h3>
+            <p>
+                When you sign up for this service, you can create one or more Hunter characters. A Hunter character here is a
+                representation of your in-game Hunter character. You provide the name, and to assist with matchmaking you provide
+                the Blood Level of your Hunter, their Covenant (if any) and your preferences for Co-Op, Chalice Dungeons, and/or
+                PvP.
+            </p>
+            <p>
+                You can add many Hunter characters, but only one may be <em>active</em> at any particular time. The active Hunter
+                is used for matchmaking. You can choose to activate any of your other Hunter characters at any time.
+            </p>
+            <p>
+                With an active Hunter character you can now begin matchmaking.
+            </p>
+            <p>
+                You can request help by ringing your Beckoning Bell in one of the various locations in the game. An indication is
+                given of the compatible Hunters who are on-line and available <em>now</em>. Your request for help is updated in
+                (near) real-time automatically to all on-line Hunters who are looking to provide help.
+            </p>
+            <p>
+                Likewise if you are looking to provide help to other Hunters, you can inspect the various locations in the game
+                to see the compatible Hunters who are on-line and looking for help <em>now</em>. You can filter the Hunters by
+                type of location (for example main story or chalice dungeons) and the location itself.
+            </p>
+            <p>
+                All match-making is <em>live</em> and <em>automatically updates</em> - there is no need for any page-refreshes.
+            </p>
+            <p>
+                You must remain signed in to this service for the matchmaking to work, whether you are requesting help or looking
+                to help other people. If you sign out of this service you disappear from match-making.
+            </p>
+            <p>
+                There is a kind-of queue system in effect, you are more likely to get matched the longer you have been trying -
+                i.e. all other things being equal (like character level, type of match-making and so on) there is no queue jumping.
+            </p>
+            <h3>Mobile</h3>
+            <p>
+                This application is designed to work on all platforms, from Desktop to mobile.
+            </p>
+            <p>
+                The primary target is the desktop browser, and some screens are not yet fully functional and responsive to mobile
+                - but this will come.
+            </p>
+            <p>
+                Remember that this a live, near real-time, service which will actively push updates to your mobile device.
+            </p>
+            <h3>Status</h3>
+            <p>
+                At the present time this is a free <strong>ALPHA</strong> service still undergoing some development. No guarantees
+                are provided with regards to service availibility or features. The service may be withdrawn at any time, and lots
+                of things might change.
+            </p>
+            <p>
+                There is nothing specific for PvP matchmaking yet, the focus so far has been on Co-Op.
+            </p>
+            <h3>Privacy Policy</h3>
+            <p>
+                We don't care who you are. Right now we don't even ask you for an email address. The only information we
+                ask you for is non-personal and relates to your in-game Hunter characters.
+            </p>
+            <p>
+                We do log account creations, usernames and IP addresses when you login. We do this in case we have to respond to
+                any abuse reports.
+            </p>
+            <h3>Acknowledgements</h3>
+            <p>
+                This service is completely independant of and is no way facilitated with From Software or Sony.
+            </p>
+            <p>
+                All trademarks are recognised as the property of their owner.
+            </p>
+        </div>
+    </div>
+</template>

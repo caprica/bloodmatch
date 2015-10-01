@@ -1,0 +1,59 @@
+@footer-size: 220px;
+
+html,
+body {
+    height       : 100%;
+}
+
+main {
+    margin       : 30px 0;
+}
+
+.page-wrap {
+    min-height   : 100%;
+    margin-bottom: -@footer-size;
+}
+
+.page-wrap:after {
+    content      : '';
+    display      : block;
+}
+
+.page-footer,
+.page-wrap:after {
+    height       : @footer-size;
+}
+
+.page-footer.vertical.segment {
+    padding      : 50px 0;
+}
+
+.mobile.only.page-footer.vertical.segment {
+    padding      : 0;
+}
+
+nav.ui.menu {
+    border-radius: 0;
+}
+
+.ui.tag.label.glyph {
+    font-family   : monospace;
+    font-weight   : normal;
+    letter-spacing: 1px;
+}
+
+div.loader-container {
+    min-height    : 200px;
+}
+
+div.not-found-container {
+    min-height    : 200px;
+}
+
+.inline.ui.button {
+    margin        : 0 0.5em;
+}
+
+div.loading div.ui.segment {
+    min-height    : 200px;
+}

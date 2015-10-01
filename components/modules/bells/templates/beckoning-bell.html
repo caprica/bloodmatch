@@ -1,0 +1,70 @@
+<template name="BeckoningBell">
+    {{#if myBeckoningBell}}
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <h3 class="ui top attached header">Beckoning Bell</h3>
+                <div class="ui attached raised segment">
+                    <div class="ui two column grid">
+                        <div class="row">
+                            <div class="column">
+                                <h4 class="ui header">Beckoning Bell</h4>
+                                {{#if myBeckoningBell}}
+                                    {{> MyBellCard myBeckoningBell}}
+                                {{/if}}
+                            </div>
+                            <div class="column">
+                                <h4 class="ui header">Hunter</h4>
+                                {{#if myHunter}}
+                                    {{> MyHunterCard myHunter}}
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <h3 class="ui top attached header">Beckoning Bell</h3>
+                <div class="ui attached raised segment">
+                    <div class="ui icon message">
+                        <i class="info circle icon"></i>
+                        <div class="content">
+                            <p>
+                                Your Beckoning Bell is not ringing.
+                            </p>
+                            <p>
+                                Go to a <a class="inline ui tiny black button" href="{{pathFor 'Locations'}}"><i class="marker icon"></i> Location</a> to ring your Beckoning Bell.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <h4 class="ui top attached header">Resonant Bells</h4>
+                <div class="ui attached raised segment">
+                    {{#if hunters.count}}
+                    <div class="ui four doubling cards">
+                        {{#each hunters}}
+                            {{>HunterCard}}
+                        {{/each}}
+                    </div>
+                    {{else}}
+                    <div class="ui message">
+                        <i class="info circle icon"></i> There are no Resonant Bells within range.
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

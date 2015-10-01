@@ -1,0 +1,28 @@
+<template name="Network">
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <h3 class="ui top attached header">
+                    Network Settings
+                </h3>
+                <div class="ui attached segment">
+                    <p>
+                        Edit your network settings here and save them when done.
+                    </p>
+                    <form id="networkForm" class="ui form">
+                        <div class="field">
+                            <label for="networkPassword">Network Password</label>
+                            <div class="ui action input">
+                                <input id="networkPassword" name="networkPassword" type="text" class="form-control" maxlength="8" placeholder="Enter network password" value="{{currentUser.profile.networkPassword}}">
+                                <button id="clearNetworkPassword" type="button" class="small negative ui button">Clear</button>
+                            </div>
+                        </div>
+                        <div class="ui error message">
+                        </div>
+                        <button class="ui blue submit button">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

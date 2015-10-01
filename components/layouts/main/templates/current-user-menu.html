@@ -1,0 +1,19 @@
+<template name="CurrentUserMenu">
+    <div class="ui dropdown item">
+        <i class="user icon"></i> {{currentUser.username}}
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <div class="header"><i class="users icon"></i> Hunters</div>
+            <div class="divider"></div>
+            <a class="item" href="{{pathFor 'Hunters'}}">My Hunters</a>
+            <a class="item" href="{{pathFor 'AddHunter'}}">Add Hunter</a>
+            <div class="divider"></div>
+            <div class="header"><i class="settings icon"></i> Settings</div>
+            <a class="item" href="{{pathFor 'Network'}}">Network</a>
+            <div class="divider"></div>
+            <div class="header"><i class="sign out icon"></i> Session</div>
+            <div class="divider"></div>
+            <a class="sign-out item" href="">Sign Out</a>
+        </div>
+    </div>
+</template>

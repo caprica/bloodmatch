@@ -1,0 +1,46 @@
+<template name="HuntersDream">
+    <div class="ui page grid">
+        <div class="computer only row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> LocationsMenu small=true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui fluid vertical menu">
+                    {{#each dream}}
+                    <a class="item" href="{{pathFor 'Dream' location=name}}">
+                        {{name}}
+                        {{#if pvp}}
+                        <div class="ui red label">PvP</div>
+                        {{/if}}
+                    </a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui icon message">
+                    <i class="cloud icon"></i>
+                    <div class="content">
+                        <div class="header">
+                            The Hunter's Dream
+                        </div>
+                        <p>
+                            Select a location to ring your Beckoning Bell...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+            {{>BeckonNoActiveHunter}}
+        {{/unless}}
+    </div>
+</template>

@@ -1,0 +1,56 @@
+<template name="Chalice">
+    <div class="ui page grid">
+        <div class="computer only row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> LocationsMenu small=true}}
+            </div>
+        </div>
+        <div class="computer only row">
+            <div class="column">
+                {{> ChalicesMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> ChalicesMenu chalices=chalices small=true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui fluid vertical menu">
+                    {{#each dungeons}}
+                    <a class="item" href="{{pathFor 'Dungeon' chalice=chalice dungeon=name}}">
+                        {{name}}
+                        {{#if pvp}}
+                        <div class="ui red label">PvP</div>
+                        {{/if}}
+                    </a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui icon message">
+                    <i class="trophy icon"></i>
+                    <div class="content">
+                        <div class="header">
+                            {{chalice}} Chalice Dungeon
+                        </div>
+                        <p>
+                            Select a dungeon to continue...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+            {{>BeckonNoActiveHunter}}
+        {{/unless}}
+    </div>
+</template>

@@ -1,0 +1,42 @@
+<template name="UserAuditEvents">
+    <div class="ui page grid">
+        <div class="column">
+            <div class="ui raised segment">
+                <div class="ui grid">
+                    <div class="column">
+                        <h1>Audit Events</h1>
+                        <h2>User {{auditUser}}</h2>
+                        <table class="ui striped table">
+                            <thead>
+                                <tr>
+                                    <th class="uk-width-1-10">Date</th>
+                                    <th class="uk-width-1-10">Time</th>
+                                    <th class="uk-width-1-10">Type</th>
+                                    <th class="uk-width-1-10">User</th>
+                                    <th class="uk-width-1-10">Data</th>
+                                    <th class="uk-width-4-10">Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each auditEvents}}
+                                    <tr>
+                                        <td>{{formatDate eventDate}}</td>
+                                        <td>{{formatTime eventDate}}</td>
+                                        <td>{{type}}</td>
+                                        <td><a href="{{ pathFor 'UserAuditEvents' }}">{{userId}}</a></td>
+                                        <td>
+                                            {{ip}}
+                                            {{hunter}}
+                                            {{location}}
+                                        </td>
+                                        <td>{{username}}</td>
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

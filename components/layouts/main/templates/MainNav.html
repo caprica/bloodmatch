@@ -1,0 +1,27 @@
+<template name="MainNav">
+    {{#if isInRole 'admin'}}
+        <li class="uk-nav-header">Admin</li>
+        <li><a href="{{ pathFor 'AuditEvents' }}"><i class="fa-fw uk-icon-book"></i> Audit Events</a></li>
+        <li><a href="{{ pathFor 'Reports' }}"><i class="fa-fw uk-icon-pie-chart"></i> Reports</a></li>
+        <li class="uk-nav-divider"></li>
+    {{/if}}
+    <li class="uk-nav-header">Hunters</li>
+    <li><a href="{{ pathFor 'Hunters' }}"><i class="fa-fw uk-icon-users"></i> My Hunters</a></li>
+    <li><a href="{{ pathFor 'AddHunter' }}"><i class="fa-fw uk-icon-user-plus"></i> Add Hunter</a></li>
+    <li class="uk-nav-divider"></li>
+    <li class="uk-nav-header">Matchmaking</li>
+    <li><a href="{{ pathFor 'BeckoningBell' }}"><i class="fa-fw uk-icon-bell-o"></i> Beckoning Bell</a></li>
+    <li><a href="{{ pathFor 'ResonantBell' }}"><i class="fa-fw uk-icon-bell"></i> Resonant Bell</a></li>
+    <li class="uk-nav-divider"></li>
+    <li><a href="{{ pathFor 'Network' }}"><i class="fa-fw uk-icon-unlock-alt"></i> Network Password</a></li>
+    {{#if config 'enableEvents'}}
+        <li class="uk-nav-divider"></li>
+        <li><a href="{{ pathFor 'Events' }}"><i class="fa-fw uk-icon-unlock-alt"></i> Events</a></li>
+    {{/if}}
+    <li class="uk-nav-divider"></li>
+    <li class="uk-nav-header">Account</li>
+    <li><a href="{{ pathFor 'DeleteAccount' }}"><i class="fa-fw uk-icon-trash"></i> Delete Account</a></li>
+    <li class="uk-nav-divider"></li>
+    <li class="uk-nav-header">Session</li>
+    <li class="logout"><a href="#"><i class="fa-fw uk-icon-sign-out"></i> Sign Out</a></li>
+</template>

@@ -1,0 +1,43 @@
+<template name="Location">
+    <div class="ui page grid">
+        <div class="computer only row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> LocationsMenu locations=locations small=true}}
+            </div>
+        </div>
+        <div class="computer only row">
+            <div class="column">
+                {{> HeadstonesMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> HeadstonesMenu headstones=headstones small=true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui raised segment">
+                    <h2 class="ui header">
+                        {{location.name}}
+                        <div class="sub header">{{location.headstone}} Headstone</div>
+                    </h2>
+                    {{#if myHunter}}
+                        {{> Beckon location=location}}
+                    {{/if}}
+                    {{#if location.pvp}}
+                    <div class="ui red top right attached label">PVP</div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+            {{>BeckonNoActiveHunter}}
+        {{/unless}}
+    </div>
+</template>

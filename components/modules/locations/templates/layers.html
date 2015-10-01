@@ -1,0 +1,66 @@
+<template name="Layers">
+    <div class="ui fluid styled accordion">
+        {{#each layers}}
+        <div class="title">
+            <i class="dropdown icon"></i> Layer {{layer}}
+        </div>
+        <div class="content">
+            <div class="accordion">
+                <div class="active title">
+                    <i class="dropdown icon"></i> Story Dungeon
+                </div>
+                <div class="active content">
+                    {{#if ../myHunter}}
+                        {{> Beckon location=this}}
+                    {{/if}}
+                </div>
+                {{#if glyphs}}
+                <div class="title">
+                    <i class="dropdown icon"></i> Community Glyphs
+                </div>
+                <div class="content">
+                    <div class="accordion">
+                        {{#each glyphs}}
+                        <div class="title">
+                            <i class="dropdown icon"></i> {{name}}
+                        </div>
+                        <div class="content">
+                            {{#if ../../myHunter}}
+                                {{> Beckon location=.. glyph=this}}
+                            {{/if}}
+                            <span class="ui big black tag label glyph">{{glyph}}</span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
+                <div class="title">
+                    <i class="dropdown icon"></i> My Glyph
+                </div>
+                <div class="content">
+                    {{#if ../myHunter}}
+                    <form id="customGlyphForm" class="ui form">
+                        <div class="field">
+                            <label for="glyph{{layer}}">Glyph</label>
+                            <div class="ui action input">
+                                <input id="glyph{{layer}}" name="glyph" type="text" required maxlength="8" placeholder="Enter your glyph">
+                                {{> Beckon location=this glyph=glyph}}
+                            </div>
+                        </div>
+                        <div class="ui error message">
+                        </div>
+                        <div class="ui message">
+                            <i class="info circle icon"></i>
+                            If you use your own glyph other Hunters may have to clear all, or parts, of your dungeon themselves
+                            before they can help you.
+                        </div>
+                    </form>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</template>
+
+<!-- FIXME would be better to not pass myHunter in here... -->

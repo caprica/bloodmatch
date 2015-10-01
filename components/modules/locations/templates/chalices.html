@@ -1,0 +1,42 @@
+<template name="Chalices">
+    <div class="ui page grid">
+        <div class="computer only row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> LocationsMenu small=true}}
+            </div>
+        </div>
+        <div class="computer only row">
+            <div class="column">
+                {{> ChalicesMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> ChalicesMenu chalices=chalices small=true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui icon message">
+                    <i class="trophy icon"></i>
+                    <div class="content">
+                        <div class="header">
+                            Chalice Dungeons
+                        </div>
+                        <p>
+                            Select the type of Chalice Dungeon to continue...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+            {{>BeckonNoActiveHunter}}
+        {{/unless}}
+    </div>
+</template>

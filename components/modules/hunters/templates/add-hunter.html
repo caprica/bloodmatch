@@ -1,0 +1,27 @@
+<template name="AddHunter">
+    <div class="ui page grid">
+        <div class="column">
+            <h3 class="ui top attached header">
+                Add Hunter
+            </h3>
+            <div class="ui attached segment">
+                <p>
+                    Enter your Hunter details here and save them when finished.
+                </p>
+                <p>
+                    Compatible match-making depends on your Hunter's Blood Echo Level, the covenant you belong to, and whether you
+                    are looking for cooperators for the main story or Chalice Dungeons, or you are looking for adversaries for
+                    Player vs Player.
+                </p>
+                <form id="addHunterForm" class="ui form">
+                    <h4 class="ui dividing header">Hunter Details</h4>
+                    <div class="required field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" class="form-control" required minlength="1" maxlength="16" placeholder="Enter name" value="{{name}}">
+                    </div>
+                    {{> EditHunterForm}}
+                </form>
+            </div>
+        </div>
+    </div>
+</template>

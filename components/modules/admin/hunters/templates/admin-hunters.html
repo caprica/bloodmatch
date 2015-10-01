@@ -1,0 +1,33 @@
+<template name="AdminHunters">
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                <h3 class="ui headers">Hunters</h3>
+                <table class="ui table">
+                    <thead>
+                        <tr>
+                            <th>Hunter ID</th>
+                            <th>Name</th>
+                            <th>Level</th>
+                            <th>Covenant</th>
+                            <th>User ID</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each hunters}}
+                        <tr>
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{level}}</td>
+                            <td>{{covenant}}</td>
+                            <td>{{createdBy}}</td>
+                            <td><!-- <button class="ui mini red button delete">Delete</button> --></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>

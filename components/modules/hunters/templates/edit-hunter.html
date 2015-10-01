@@ -1,0 +1,39 @@
+<template name="EditHunter">
+    <div class="ui page grid">
+        <div class="column">
+            <h3 class="ui top attached header">
+                Edit Hunter {{hunter.name}}
+            </h3>
+            <div class="ui attached segment">
+                <p>
+                    Edit your Hunter details here and save them when finished.
+                </p>
+                <p>
+                    Compatible match-making depends on your Hunter's Blood Echo Level, the covenant you belong to, and whether you
+                    are looking for cooperators for the main story or Chalice Dungeons, or you are looking for adversaries for
+                    Player vs Player.
+                </p>
+                <form id="editHunterForm" class="ui form">
+                    <h4 class="ui dividing header">Hunter Details</h4>
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input id="name" readonly="readonly" value="{{hunter.name}}">
+                    </div>
+                    {{> EditHunterForm}}
+                </form>
+            </div>
+            <div class="ui negative message">
+                <div class="header">
+                    Delete Hunter
+                </div>
+                <p>
+                    You can delete this Hunter if they are no longer needed.
+                </p>
+                <p>
+                    This action cannot be undone.
+                </p>
+                <div id="deleteHunter" class="ui negative submit button">Delete Hunter {{hunter.name}}</div>
+            </div>
+        </div>
+    </div>
+</template>

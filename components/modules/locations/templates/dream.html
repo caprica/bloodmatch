@@ -1,0 +1,47 @@
+<template name="Dream">
+    <div class="ui page grid">
+        <div class="computer only row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="mobile only row">
+            <div class="column">
+                {{> LocationsMenu small=true}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui raised segment">
+                    <h2 class="ui header">
+                        {{location.name}}
+                        <div class="sub header">The Hunter's Dream</div>
+                    </h2>
+                    {{#if myHunter}}
+                        {{> Beckon location=location}}
+                    {{/if}}
+                    {{#if location.pvp}}
+                    <div class="ui red top right attached label">PVP</div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+        <div class="row">
+            <div class="column">
+                <div class="ui icon warning message">
+                    <i class="warning sign icon"></i>
+                    <div class="content">
+                        <div class="header">
+                            Beckoning Bell
+                        </div>
+                        <p>
+                            You need to active a Hunter before you can ring a Beckoning Bell.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/unless}}
+    </div>
+</template>

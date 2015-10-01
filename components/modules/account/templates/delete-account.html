@@ -1,0 +1,24 @@
+<template name="DeleteAccount">
+    <div class="ui page grid">
+        <div class="column">
+            {{#if config 'allowDeleteAccount'}}
+                <div class="uk-width-1-1">
+                    <h1>Delete Account</h1>
+                    <div class="uk-alert uk-alert-danger">
+                        <i class="uk-icon-exclamation-triangle"></i> Deleting an account is final, are you sure you want to delete your account?
+                    </div>
+                    <button id="deleteAccount" class="uk-button uk-button-danger">Yes, Delete my Account</button>
+                </div>
+            {{else}}
+                <div class="uk-width-small-2-3 uk-width-medium-3-5 uk-container-center">
+                    <div class="uk-alert uk-alert-danger uk-alert-large">
+                        <h2>Delete Account Disabled</h2>
+                        <p>
+                            Deleting an account is currently disabled, please try again later.
+                        </p>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>

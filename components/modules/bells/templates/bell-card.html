@@ -1,0 +1,57 @@
+<template name="BellCard">
+    <div class="ui card">
+        <span class="ui right black corner label">
+            <i class="alarm outline icon"></i>
+        </span>
+        <div class="content">
+            <div class="header">
+                {{hunter}}
+            </div>
+            <div class="meta">
+                Level {{level}}
+            </div>
+            {{#if covenant}}
+                <div class="meta">
+                    {{covenant}}
+                </div>
+            {{/if}}
+            <div class="description">
+                {{#if equals type 'Headstone'}}
+                    {{location}}, {{headstone}} Headstone
+                {{/if}}
+                {{#if equals type 'Hunter\'s Dream'}}
+                    {{location}}, The {{type}}
+                {{/if}}
+                {{#if equals type 'Chalice'}}
+                    {{location}} Chalice Dungeon, Layer {{layer}}
+                {{/if}}
+            </div>
+        </div>
+        {{#if currentUser.profile.networkPassword}}
+        <div class="extra content">
+            <p>
+                Password <b>{{currentUser.profile.networkPassword}}</b>
+            </p>
+        </div>
+        {{/if}}
+        {{#if glyph}}
+        <div class="extra content">
+            <p>
+                <b>{{glyph.name}}</b>
+            </p>
+            <p>
+                <span class="ui medium black tag label glyph">{{glyph.glyph}}</span>
+            </p>
+        </div>
+        {{/if}}
+        <div class="extra content">
+            {{pingCount}}
+        </div>
+        <div class="extra content">
+            {{ago createdDate}}
+        </div>
+        <button class="{{#if pinged}}disabled {{/if}}positive ui tiny bottom attached button ping">
+            <i class="send icon"></i> Send Chime
+        </button>
+    </div>
+</template>

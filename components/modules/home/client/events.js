@@ -1,0 +1,3 @@
+Template.Home.events({
+
+});

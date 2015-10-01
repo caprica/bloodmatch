@@ -1,0 +1,33 @@
+<template name="Dungeon">
+    <div class="ui page grid">
+        <div class="row">
+            <div class="column">
+                {{> LocationsMenu}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                {{> ChalicesMenu}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui raised segment">
+                    <h2 class="ui header">
+                        {{dungeon}}
+                        <div class="sub header">Chalice Dungeon</div>
+                    </h2>
+                    {{#if myHunter}}
+                    {{> Layers layers=layers myHunter=myHunter}}
+                    {{#if pvp}}
+                    <div class="ui red top right attached label">PVP</div>
+                    {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{#unless myHunter}}
+            {{>BeckonNoActiveHunter}}
+        {{/unless}}
+    </div>
+</template>

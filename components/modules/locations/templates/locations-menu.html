@@ -1,0 +1,27 @@
+<template name="LocationsMenu">
+    {{#unless small}}
+    <div class="ui fluid three item pointing menu">
+        <a class="{{isActivePath regex='^/locations/headstones'}} item" href="{{pathFor 'Headstones'}}">
+            <i class="flag icon"></i> Headstones
+        </a>
+        <a class="{{isActivePath regex='^/locations/hunters-dream'}} item" href="{{ pathFor 'HuntersDream' }}">
+            <i class="cloud icon"></i> The Hunter's Dream
+        </a>
+        <a class="{{isActivePath regex='^/locations/chalices'}} item" href="{{ pathFor 'Chalices' }}">
+            <i class="trophy icon"></i> Chalice Dungeons
+        </a>
+    </div>
+    {{else}}
+    <div class="ui fluid vertical menu">
+        <a class="{{isActivePath regex='^/locations/headstones'}} item" href="{{pathFor 'Headstones'}}">
+            <i class="flag icon"></i> Headstones
+        </a>
+        <a class="{{isActivePath regex='^/locations/hunters-dream'}} item" href="{{ pathFor 'HuntersDream' }}">
+            <i class="cloud icon"></i> The Hunter's Dream
+        </a>
+        <a class="{{isActivePath regex='^/locations/chalices'}} item" href="{{ pathFor 'Chalices' }}">
+            <i class="trophy icon"></i> Chalice Dungeons
+        </a>
+    </div>
+    {{/unless}}
+</template>

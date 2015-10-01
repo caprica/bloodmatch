@@ -1,0 +1,12 @@
+<template name="FilterMenu">
+    <div class="ui dropdown item" data-type="{{type}}">
+        <div class="text">Any</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="active item" data-value=''>Any</a>
+            {{#each items}}
+            <a class="item" data-value='{{this}}'>{{this}}</a>
+            {{/each}}
+        </div>
+    </div>
+</template>
