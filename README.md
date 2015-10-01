@@ -25,5 +25,5 @@ This application is open source, but redistribution or commercial use would requ
 Live Deployment
 ---------------
 
-There is a live deployment of this application on RedHat's OpenShift platform at [Bloodmatch](http://bloodmatch-caprica.rhcloud.com/ "Bloodmatch")]
+There is a live deployment of this application on RedHat's OpenShift platform at [Bloodmatch](http://bloodmatch-caprica.rhcloud.com/ "Bloodmatch")
 
