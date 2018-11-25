@@ -21,9 +21,3 @@ License
 Please see the LICENSE file.
 
 This application is open source, but redistribution or commercial use would require a commercial license.
-
-Live Deployment
----------------
-
-There is a live deployment of this application on RedHat's OpenShift platform at [Bloodmatch](http://bloodmatch-caprica.rhcloud.com/ "Bloodmatch")
-
